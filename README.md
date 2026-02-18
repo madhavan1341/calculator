@@ -1,121 +1,22 @@
-# calculator
+# 🧮 Simple Web Calculator
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Calculator</title>
-  <style>
-	  .calculator {
-  width: 220px;
-  margin: 50px auto;
-  padding: 10px;
-  background-color: #ff0000;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
+A colorful, basic calculator built using pure HTML, CSS, and JavaScript. 
 
-#result {
-  width: 90%;
-  margin: 10px;
-  padding: 10px;
-  font-size: 20px;
-  border: none;
-  background-color: #ffffff;
-  color: #333333;
-  border-radius: 5px;
-  text-align: right;
-}
+## 🚀 Features
+* **Basic Arithmetic:** Supports addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`).
+* **Clear Function:** Includes a `C` button to easily clear the screen and reset calculations.
+* **Colorful UI:** Designed with a striking red theme (`#ff0000`) and distinctly colored operator/equal buttons for better user experience.
+* **Error Handling:** Built-in error catching (displays "Error" if an invalid calculation is attempted).
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-}
+## 🛠️ Technologies Used
+* **HTML5:** For the calculator's structure and input display.
+* **CSS3:** For styling, including CSS Grid for the button layout and hover effects.
+* **JavaScript:** Embedded logic using the `eval()` function to compute the math.
 
-button {
-  padding: 15px;
-  background-color: #ff7f7f;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-}
+## 💻 How to Run
+Since this is a client-side web application, no server or installation is required!
+1. Download or clone this repository.
+2. Open the `index.html` file in any modern web browser (Chrome, Edge, Safari, etc.).
+3. Start calculating!
 
-button:hover {
-  background-color: #ff5f5f;
-}
-
-button.operator {
-  background-color: #ffd37f;
-  color: #333333;
-  font-weight: bold;
-}
-
-button.operator:hover {
-  background-color: #ffc36f;
-}
-
-button.equal {
-  background-color: #7fff7f;
-  color: #ffffff;
-}
-
-button.equal:hover {
-  background-color: #5fff5f;
-}
-
-  </style>
-  </head>
-<body>
-  <div class="calculator">
-    <input type="text" id="result" readonly>
-    <div class="buttons">
-      <button onclick="clearResult()">C</button>
-      <button onclick="appendValue(7)">7</button>
-      <button onclick="appendValue(8)">8</button>
-      <button onclick="appendValue(9)">9</button>
-      <button onclick="appendValue(4)">4</button>
-      <button onclick="appendValue(5)">5</button>
-      <button onclick="appendValue(6)">6</button>
-      <button onclick="appendValue(1)">1</button>
-      <button onclick="appendValue(2)">2</button>
-      <button onclick="appendValue(3)">3</button>
-      <button onclick="appendValue(0)">0</button>
-      <button onclick="appendOperator('+')">+</button>
-      <button onclick="appendOperator('-')">-</button>
-      <button onclick="appendOperator('*')">*</button>
-      <button onclick="appendOperator('/')">/</button>
-      <button onclick="calculate()">=</button>
-    </div>
-  </div>
-  <script>let calculation = '';
-
-function appendValue(value) {
-  calculation += value;
-  document.getElementById('result').value = calculation;
-}
-
-function appendOperator(operator) {
-  calculation += operator;
-  document.getElementById('result').value = calculation;
-}
-
-function calculate() {
-  try {
-    const result = eval(calculation);
-    document.getElementById('result').value = result;
-    calculation = '';
-  } catch (error) {
-    document.getElementById('result').value = 'Error';
-  }
-}
-
-function clearResult() {
-  calculation = '';
-  document.getElementById('result').value = '';
-}
-</script>
-</body>
-</html>
+---
